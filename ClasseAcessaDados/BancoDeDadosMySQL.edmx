@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="cadastropessoasModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="cadastropessoasModelStoreContainer">
+          <EntitySet Name="pessoas" EntityType="cadastropessoasModel.Store.pessoas" store:Type="Tables" Schema="cadastropessoas" />
+          <EntitySet Name="tb_loginusuario" EntityType="cadastropessoasModel.Store.tb_loginusuario" Schema="cadastropessoas" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="pessoas">
+          <Key>
+            <PropertyRef Name="Id_pessoa" />
+          </Key>
+          <Property Name="Id_pessoa" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_pessoa" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Sobrenome_pessoa" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Endereco_pessoa" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="Telefone_pessoa" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Email_pessoa" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="DataCadastro_pessoa" Type="date" Nullable="false" />
+          <Property Name="DataAltCadastro_pessoa" Type="date" />
+        </EntityType>
+        <EntityType Name="tb_loginusuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="emailPri" Nullable="false" MaxLength="80" Type="varchar" />
+          <Property Name="senhaPri" Nullable="false" MaxLength="50" Type="varchar" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cadastropessoasModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="cadastropessoasEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="pessoas" EntityType="cadastropessoasModel.pessoas" />
+          <EntitySet Name="tb_loginusuario" EntityType="cadastropessoasModel.tb_loginusuario" />
+        </EntityContainer>
+        <EntityType Name="pessoas">
+          <Key>
+            <PropertyRef Name="Id_pessoa" />
+          </Key>
+          <Property Name="Id_pessoa" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_pessoa" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Sobrenome_pessoa" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Endereco_pessoa" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="Telefone_pessoa" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Email_pessoa" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="DataCadastro_pessoa" Type="DateTime" Nullable="false" />
+          <Property Name="DataAltCadastro_pessoa" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="tb_loginusuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="emailPri" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="senhaPri" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cadastropessoasModelStoreContainer" CdmEntityContainer="cadastropessoasEntities">
+          <EntitySetMapping Name="pessoas">
+            <EntityTypeMapping TypeName="cadastropessoasModel.pessoas">
+              <MappingFragment StoreEntitySet="pessoas">
+                <ScalarProperty Name="Id_pessoa" ColumnName="Id_pessoa" />
+                <ScalarProperty Name="Nome_pessoa" ColumnName="Nome_pessoa" />
+                <ScalarProperty Name="Sobrenome_pessoa" ColumnName="Sobrenome_pessoa" />
+                <ScalarProperty Name="Endereco_pessoa" ColumnName="Endereco_pessoa" />
+                <ScalarProperty Name="Telefone_pessoa" ColumnName="Telefone_pessoa" />
+                <ScalarProperty Name="Email_pessoa" ColumnName="Email_pessoa" />
+                <ScalarProperty Name="DataCadastro_pessoa" ColumnName="DataCadastro_pessoa" />
+                <ScalarProperty Name="DataAltCadastro_pessoa" ColumnName="DataAltCadastro_pessoa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_loginusuario">
+            <EntityTypeMapping TypeName="cadastropessoasModel.tb_loginusuario">
+              <MappingFragment StoreEntitySet="tb_loginusuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emailPri" ColumnName="emailPri" />
+                <ScalarProperty Name="senhaPri" ColumnName="senhaPri" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
