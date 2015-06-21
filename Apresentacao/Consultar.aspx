@@ -80,9 +80,7 @@
     <script src="Scripts/jquery-1.9.1.js"></script>
     <script>
         $(document).ready(function () {
-            setInterval(function () {
-                $('#pnlMensagem').fadeOut();
-            }, 2000);
+            $('#pnlMensagem').slideUp(3000);
         });
     </script>
 </body>

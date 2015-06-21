@@ -67,7 +67,7 @@
     <script src="Scripts/jquery-1.9.1.js"></script>
     <script>
         $(document).ready(function () {
-            $('#pnlMensagem').slideUp(2000);
+            $('#pnlMensagem').slideUp(3000);
         });
     </script>
 </body>

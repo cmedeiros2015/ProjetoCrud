@@ -60,7 +60,7 @@
                     </asp:Panel>
                     <asp:Panel ID="pnlMensagem" runat="server">
                         <div class="well">
-                            <asp:Label ID="lblMensagem" runat="server" CssClass="alert  alert-warning" />
+                            <asp:Label ID="lblMensagem" runat="server" CssClass="alert  alert-info" />
                         </div>
                     </asp:Panel>
                     <asp:Panel ID="pnlBotoes" runat="server">
@@ -78,9 +78,7 @@
     <script src="Scripts/jquery-1.9.1.js"></script>
     <script>
         $(document).ready(function () {
-            setInterval(function () {
-                $('#pnlMensagem').fadeOut();
-            }, 2000);
+            $('#pnlMensagem').slideUp(3000);
         });
     </script>
 </body>
